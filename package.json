@@ -2,13 +2,16 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "babel-loader": "^8.2.2",
     "webpack": "^5.21.2",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
     "dev": "webpack",
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
     "watch": "webpack --watch",
     "start": "webpack serve --open"
   }
