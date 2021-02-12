@@ -15,7 +15,13 @@ module.exports = {
         rules: [
             {
                 test: /\.(s[ac]|c)ss$/i,
-                use: [MiniCssExtractPlugin.loader, 
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                          publicPath: '/public/path/to/',
+                        },
+                    },
                     "css-loader", 
                     "postcss-loader",
                     "sass-loader",
@@ -27,6 +33,14 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                 },
+            },
+            {
+                test: /\.(png|jpg|svg|gif)$/,
+                use: ['file-loader'],
+            },
+            {
+                test: /\.(ttf|woff|woff2|eot|otf)$/,
+                use: ['file-loader'],
             },
         ],
     },

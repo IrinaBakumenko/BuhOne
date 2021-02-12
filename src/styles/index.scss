@@ -1,1 +1,6 @@
-@use "base";
+@use "fonts";
+@use "variables";
+
+body {
+    background-color: variables.$white;
+}
