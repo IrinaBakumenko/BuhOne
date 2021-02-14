@@ -1,0 +1,60 @@
+@use "variables";
+
+.slider__first-screen {
+    margin-top: 90px;
+}
+
+.slider {
+    margin-top: 50px;
+}
+
+.slider-ellipse {
+    width: 140px;
+}
+
+.ellipse-blue {
+    background-color: variables.$accept;
+    opacity: 0.4;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.ellipse-blue__active {
+    background-color: variables.$accept;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.slider-arrow-right {
+    transform: rotate(180deg);
+}
+
+.slider-ellipse__white-hover {
+    background-color: variables.$white;
+    border-radius: 50%;
+}
+
+.button-slider {
+    width: 60px;
+    height: 60px;
+}
+
+.button-slider__transparent {
+    transition: 1s;
+    background: variables.$button-slider__transparent;
+}
+
+.button-slider__transparent:hover {
+    background: variables.$button-slider__transparent-hover;
+}
+
+.button-slider__accept {
+    background-color: variables.$button-slider__accept;
+    transition: 1s;
+}
+
+.button-slider__accept:hover {
+    background-color: variables.$accept;
+}

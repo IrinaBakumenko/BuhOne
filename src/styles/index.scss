@@ -1,6 +1,419 @@
+@use "reset.css";
 @use "fonts";
 @use "variables";
+@use "slider";
+
+
+.flexbox-row {
+    display: flex;
+    align-items: center;
+}
+
+.flex-box__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
 body {
     background-color: variables.$white;
+    font-family: 'Lato-Regular';
+    color: variables.$text-color;
+}
+
+h1 {
+    color: variables.$white;
+    font-size: 48px;
+    line-height: 66px;
+    font-family: 'Merriweather-Bold';
+    padding: 170px 0 80px;
+}
+
+h3 {
+    padding-top: 140px;
+    color: variables.$dark-grey;
+    font-family: 'Lato-Black';
+    font-size: 24px;
+    line-height: 33px;
+}
+
+h2 {
+    padding-top: 40px;
+    font-family: 'Merriweather-Black';
+    font-size: 48px;
+    line-height: 69px;
+}
+
+h2 > span {
+    color: variables.$accept;
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid variables.$white;
+    padding-bottom: 15px;
+    background: transparent;
+    outline: none;
+    font-family:inherit;
+    font-size: inherit;
+    color: variables.$white;
+    width: 250px;
+}
+
+textarea {
+    resize: vertical;
+    border: none;
+    border-bottom: 2px solid variables.$white;
+    padding: 15px;
+    background: transparent;
+    font-family:inherit;
+    font-size: inherit;
+    color: variables.$white;
+    width: 540px;
+    margin-bottom: 50px;
+}
+
+button {
+    color: variables.$white;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    border: none;
+}
+
+.button-main {
+    width: 270px;
+    height: 60px;
+    background-color: variables.$accept;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    border: none;
+}
+
+
+
+a { 
+    color: inherit; 
+    text-decoration: none;
+}
+
+.float-right {
+    float: right;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container {
+    max-width: 1116px;
+    margin: 0 auto;
+    
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    min-height: 110px;
+    width: 100%;
+}
+
+.top__logo {
+    align-items: center;
+    display: flex;
+    flex: 0 0 20%;
+}
+
+.top__logo-img {
+    flex: 0;
+    padding-right: 30px;
+}
+
+.top__logo-text {
+    font-family: 'Merriweather-Bold';
+    font-weight: bold;
+    color: variables.$accept;
+    font-size: 36px;
+    line-height: 50px;
+    flex: 0 0 auto;
+}
+
+.top-links {
+    flex: 1;
+    max-width: 670px;
+}
+
+.top-links__nav{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.top-links__nav > .top-links__nav-info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.top-links__nav-info-img {
+    padding-right: 15px;
+}
+
+.top-links__nav > .top-links__nav-menu {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items:center;
+    text-transform:uppercase;
+    height: 100%;
+    font-family: 'Lato-Bold';
+    font-style: normal; 
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    min-height: 670px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/images/st-peterburg.jpg);
+}
+
+.services {
+    background-color: variables.$grey;
+}
+
+.services-items {
+    padding-top: 30px;
+    flex-wrap: wrap;
+    padding-bottom: 140px;
+}
+
+.services-item{
+    width: 350px;
+    height: 360px;
+    margin-top: 30px;
+    background-image: url(../assets/images/services.jpg);
+    display: table;
+}
+
+.services-item:hover {
+    background: linear-gradient(0deg, rgba(0, 95, 163, 0.65), rgba(0, 95, 163, 0.65)), url(../assets/images/services.jpg);
+}
+
+.services-item__text {
+    font-size: 24px;
+    line-height: 30px;
+    font-family: 'Lato-Black';
+    color: variables.$white;
+    padding-left: 45px;
+    padding-bottom: 45px;
+    padding-right: 45px;
+    vertical-align: bottom;
+    height: 100%;
+    display: table-cell;
+}
+
+.about-us {
+    background-color: variables.$white;
+    min-height: 845px;
+} 
+
+.about-us__text {
+    width: 445px;
+    height: auto;
+    padding-top: 60px;
+    font-size: 18px;
+    line-height: 25px;
+    font-family: 'Lato-Light';
+}
+
+.about-us__descr {
+    flex: 0;
+}
+
+.about-us__items {
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 540px;
+    margin-top: 165px;
+}
+
+.about-us__item {
+    width: 255px;
+    height: 255px;
+    background-color: variables.$grey;
+    padding: 40px;
+    margin-top: 30px;
+}   
+
+.about-us__item:hover {
+    background-color: variables.$accept;
+    color: variables.$white;
+}
+
+.about-us__item-number {
+    font-size: 55px;
+    line-height: 66px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Lato-Black';
+}
+
+.about-us__item-text {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: bold;
+    padding-top: 30px;
+    font-family: 'Lato-Bold';
+}
+
+.about-us__item-link {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    padding-top: 47px;
+    font-family: 'Lato-Bold';
+    text-decoration-line: underline;
+    color: variables.$accept;
+}
+
+.about-us__item > .about-us__item-link:hover {
+    color: variables.$white;
+}
+
+.clients {
+    min-height: 630px;
+}
+
+.clients-h3 {
+    padding-top: 100px;
+}
+
+.clients-company {
+    padding-top: 80px;
+}
+
+.reviews {
+    background-color: variables.$white;
+    min-height: 900px;
+}
+
+.reviews > .reviews-item {
+    justify-content: space-between;
+
+}
+
+.reviews-item{
+    background-color: variables.$grey;
+    height: 320px;
+    width: 100%;
+    margin-top: 80px;
+    padding: 45px 95px;
+    
+}
+
+.reviews-item__text {
+    font-size: 18px;
+    line-height: 25px;
+    font-family: 'Lato-Light';
+    flex: 1;
+}
+
+.reviews-item__avatar {
+    flex: 0;
+    justify-content: start;
+
+}
+.reviews-item__avatar-img {
+    flex: 0;
+}
+
+.reviews-item__avatar-descr {
+    flex: 1;
+    padding-left: 35px;
+}
+
+.avatar-descr__name {
+    font-size: 18px;
+    line-height: 25px;
+    font-family: 'Lato-Black';
+}
+
+.avatar-descr__company {
+    font-size: 14px;
+    line-height: 19px;
+    padding-top: 10px;
+}
+
+.contact {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../assets/images/st-peterburg.jpg), #C4C4C4;
+    widows: 100%;
+    height: 623px;
+    color: variables.$white;
+}
+
+.contact-flex {
+    align-items: start;
+    padding-top: 120px;
+}
+
+.contact-us > p {
+    padding-top: 60px;
+    font-size: 18px;
+    line-height: 25px;
+    font-family: 'Lato-Light';
+}
+
+.contact-us > h2 {
+    padding-top: 0;
+}
+
+.contact-us__items {
+    padding-top: 80px;
+}
+
+.contact-us__items-phone-img {
+    padding-right: 15px;
+}
+
+
+.contact-form__data-name {
+    padding-right: 30px;
+}
+
+.contact-form__data-message, .contact-form__data-lastname, .contact-form__data-name {
+    line-height: 47px;
+
+}
+
+.footer {
+    font-size: 14px;
+    line-height: 19px;
+    font-family: 'Lato-Light';
+    padding: 50px 0 40px;
 }
